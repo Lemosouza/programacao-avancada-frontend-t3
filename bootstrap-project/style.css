@@ -13,7 +13,7 @@ bory{
 }
 
 p, li{
-   color: #0f1026;
+   color: #002333;
    font-size: 14px;
 }
 
@@ -27,11 +27,27 @@ p, li{
   margin-bottom: 65px;
   text-align: center;
   font-size: 40px;
-  color: #0f1026;
+  color: #002333;
+}
+
+.main-title::after{
+  background-color: #002333;
+  content: "";
+  display: grid;
+  height: 2px;
+  position: relative;
+  vertical-align: bottom;
+  width: 9%;
+}
+
+.main-title:after {
+  left: 17em;
+  bottom: -0.5em;
+  margin-bottom: auto;
 }
 
 #about-title{
-  color: #0f1026;
+  color: #002333;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 17px;
@@ -43,7 +59,7 @@ p, li{
 }
 
 #about-list i{
-  color: #4973f2;
+  color: #159A9C;
   margin-right: 15px;
 }
 
@@ -60,7 +76,7 @@ p, li{
 
 .Service-box i{
   font-size: 36px;
-  color: #0f1026;
+  color: #002333;
   margin-bottom: 26px;
 }
 
@@ -70,7 +86,7 @@ p, li{
 }
 
 .Service-box:hover > i, .Service-box:hover > h3{
-  color: #4973f2;
+  color: #159A9C;
 }
 
 .Service-box i, .Service-box h3{
