@@ -46,7 +46,7 @@ p, li{
   margin-bottom: auto;
 }
 
-#about-title{
+.title-uppercase{
   color: #002333;
   text-transform: uppercase;
   font-weight: bold;
@@ -91,4 +91,48 @@ p, li{
 
 .Service-box i, .Service-box h3{
   transition: 1s;
+}
+
+/* Time */
+
+#team-area{
+  margin-bottom: 65px;
+}
+
+/* Trabalhe conosco */
+
+#applay-area{
+  height: 500px;
+}
+
+#appl-area .row, #apply-img, #apply-content{
+  height: 100%;
+}
+
+#apply-img{
+  background-image: url('img/e-commerce.jpg');
+  background-size: cover;
+}
+
+#apply-content{
+  background-color: black;
+  padding: 0 5% 0 5%;
+}
+
+#apply-content h4, #apply-content p{
+  color: white;
+}
+
+#apply-content h4{
+  margin-top: 15%;
+}
+
+#botao{
+  border-color: white;
+  border-radius: 15px;
+  background-color: #159a9c00;
+}
+
+#botao:hover{
+  background-color: #159A9C;
 }
