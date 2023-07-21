@@ -1,80 +1,138 @@
 /* Geral */
-
-body {
+bory{
   font-family: 'Roboto', sans-serif;
+
 }
 
-.container-fluid {
-  padding: 70px 0;
+.container-fluid{
+   padding: 70px 0;
 }
 
-.row {
-  margin: 0;
+.row{
+   margin: 0;
 }
 
-p, li {
-  color: #0f1026;
-  font-size: 14px;
+p, li{
+   color: #002333;
+   font-size: 14px;
 }
 
 /* Sobre */
 
-#about-area {
+#about-area{
   background-color: #f2f2f2;
 }
 
-.main-title {
-  margin: 0 0 65px 0;
+.main-title{
+  margin-bottom: 65px;
   text-align: center;
   font-size: 40px;
-  color: #0f1026;
+  color: #002333;
 }
 
-#about-title {
-  color: #0f1026;
+.main-title::after{
+  background-color: #002333;
+  content: "";
+  display: grid;
+  height: 2px;
+  position: relative;
+  vertical-align: bottom;
+  width: 9%;
+}
+
+.main-title:after {
+  left: 17em;
+  bottom: -0.5em;
+  margin-bottom: auto;
+}
+
+.title-uppercase{
+  color: #002333;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 17px;
 }
 
-#about-list {
+#about-list{
   list-style: none;
   padding: 0;
 }
 
-#about-list i {
-  color: #4973f2;
+#about-list i{
+  color: #159A9C;
   margin-right: 15px;
 }
 
-#about-list li {
+#about-list li{
   line-height: 30px;
 }
 
 /* Serviços */
 
-.service-box {
+.Service-box{
   text-align: center;
   margin-bottom: 50px;
 }
 
-.service-box i {
+.Service-box i{
   font-size: 36px;
-  color: #0f1026;
-  margin-bottom: 20px;
+  color: #002333;
+  margin-bottom: 26px;
 }
 
-.service-box h3 {
+.Sevice-box h3{
   font-size: 24px;
   margin-bottom: 12px;
 }
 
-.service-box:hover > i, .service-box:hover > h3 {
-  color: #4973f2;
+.Service-box:hover > i, .Service-box:hover > h3{
+  color: #159A9C;
 }
 
-.service-box i, .service-box h3 {
+.Service-box i, .Service-box h3{
   transition: 1s;
 }
 
+/* Time */
 
+#team-area{
+  margin-bottom: 65px;
+}
+
+/* Trabalhe conosco */
+
+#applay-area{
+  height: 500px;
+}
+
+#appl-area .row, #apply-img, #apply-content{
+  height: 100%;
+}
+
+#apply-img{
+  background-image: url('img/e-commerce.jpg');
+  background-size: cover;
+}
+
+#apply-content{
+  background-color: black;
+  padding: 0 5% 0 5%;
+}
+
+#apply-content h4, #apply-content p{
+  color: white;
+}
+
+#apply-content h4{
+  margin-top: 15%;
+}
+
+#botao{
+  border-color: white;
+  border-radius: 15px;
+  background-color: #159a9c00;
+}
+
+#botao:hover{
+  background-color: #159A9C;
+}
