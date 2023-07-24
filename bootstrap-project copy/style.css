@@ -37,11 +37,11 @@ p, li{
   height: 2px;
   position: relative;
   vertical-align: bottom;
-  width: 9%;
+  width: 17%;
 }
 
 .main-title:after {
-  left: 17em;
+  left: 630px;
   bottom: -0.5em;
   margin-bottom: auto;
 }
@@ -112,13 +112,8 @@ p, li{
   height: 500px;
 }
 
-#appl-area .row, #apply-img, #apply-content{
+#appl-area .row, .col-md-6, #apply-content{
   height: 100%;
-}
-
-#apply-img{
-  background-image: url('img/empresa.jpg');
-  background-size: cover;
 }
 
 #apply-content{
@@ -127,6 +122,7 @@ p, li{
 
 #apply-content h4, #apply-content p{
   color: white;
+  margin-right: 15px;
 }
 
 #apply-content h4{
