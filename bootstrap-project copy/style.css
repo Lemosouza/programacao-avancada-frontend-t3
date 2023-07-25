@@ -33,10 +33,9 @@ p, li{
 .main-title::after{
   background-color: #002333;
   content: "";
-  display: grid;
+  margin: 0 auto;
+  display: block;
   height: 2px;
-  position: relative;
-  vertical-align: bottom;
   width: 9%;
 }
 
@@ -112,13 +111,8 @@ p, li{
   height: 500px;
 }
 
-#appl-area .row, #apply-img, #apply-content{
+#appl-area .row, .img-fluid, #apply-content{
   height: 100%;
-}
-
-#apply-img{
-  background-image: url('img/empresa.jpg');
-  background-size: cover;
 }
 
 #apply-content{
