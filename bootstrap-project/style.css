@@ -46,8 +46,8 @@ p, li{
   margin-bottom: auto;
 }
 
-.title-uppercase{
-  color: #002333;
+.title-uppercase {
+  color: #0f1026;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 17px;
@@ -93,44 +93,45 @@ p, li{
   transition: 1s;
 }
 
+/* Dados */
+
+#data-area p {
+  font-size: 20px;
+  color: white;
+}
+
+
 /* Time */
 
-#team-area{
+#team-area {
   margin-bottom: 65px;
 }
 
 /* Trabalhe conosco */
 
-#applay-area{
+#apply-area {
   height: 500px;
 }
 
-#appl-area .row, #apply-img, #apply-content{
+#apply-area .row, #apply-img, #apply-content {
   height: 100%;
 }
 
-#apply-img{
-  background-image: url('img/e-commerce.jpg');
+#apply-img {
+  background-image: url('img/empresa.jpg');
   background-size: cover;
 }
 
-#apply-content{
-  background-color: black;
+#apply-content {
   padding: 0 5% 0 5%;
 }
 
-#apply-content h4, #apply-content p{
+#apply-content h4, #apply-content p {
   color: white;
 }
 
-#apply-content h4{
+#apply-content h4 {
   margin-top: 15%;
-}
-
-#botao{
-  border-color: white;
-  border-radius: 15px;
-  background-color: #159a9c00;
 }
 
 #botao:hover{
