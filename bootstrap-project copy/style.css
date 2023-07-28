@@ -1,33 +1,64 @@
 /* Geral */
-bory{
+
+body {
   font-family: 'Roboto', sans-serif;
+}
+
+.container-fluid {
+  padding: 70px 0;
+}
+
+.row {
+  margin: 0;
+}
+
+p, li {
+  color: #0f1026;
+  font-size: 14px;
+}
+
+/* Header */
+
+#nav-container {
+  padding: 0;
+}
+
+header img {
+  width: 60px;
+  height: 89px;
+}
+
+.navbar-brand{
 
 }
 
-.container-fluid{
-   padding: 70px 0;
+/* Carousel/Slideshow */
+
+#carousel-area .carousel-inner, #carousel-area .carousel-item {
+  height: 90vh;
+  margin-top: 59px;
 }
 
-.row{
-   margin: 0;
+#carousel-area .carousel-caption {
+  top: 35%;
 }
 
-p, li{
-   color: #002333;
-   font-size: 14px;
+#carousel-area p {
+  color: white;
+  font-size: larger;
 }
 
 /* Sobre */
 
-#about-area{
+#about-area {
   background-color: #f2f2f2;
 }
 
-.main-title{
-  margin-bottom: 65px;
+.main-title {
+  margin: 0 0 65px 0;
   text-align: center;
   font-size: 40px;
-  color: #002333;
+  color: #0f1026;
 }
 
 .main-title::after{
@@ -46,127 +77,200 @@ p, li{
   margin-bottom: auto;
 }
 
-.title-uppercase{
-  color: #002333;
+
+.title-uppercase {
+  color: #0f1026;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 17px;
 }
 
-#about-list{
+#about-list {
   list-style: none;
   padding: 0;
 }
 
-#about-list i{
-  color: #159A9C;
+#about-list i {
+  color: #4973f2;
   margin-right: 15px;
 }
 
-#about-list li{
+#about-list li {
   line-height: 30px;
 }
 
 /* Serviços */
 
-.Service-box{
+.service-box {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.Service-box i{
+.service-box i {
   font-size: 36px;
-  color: #002333;
-  margin-bottom: 26px;
+  color: #0f1026;
+  margin-bottom: 20px;
 }
 
-.Sevice-box h3{
+.service-box h3 {
   font-size: 24px;
   margin-bottom: 12px;
 }
 
-.Service-box:hover > i, .Service-box:hover > h3{
-  color: #159A9C;
+.service-box:hover > i, .service-box:hover > h3 {
+  color: #4973f2;
 }
 
-.Service-box i, .Service-box h3{
+.service-box i, .service-box h3 {
   transition: 1s;
 }
 
 /* Dados */
 
-#data-area p{
+#data-area p {
   font-size: 20px;
   color: white;
 }
 
+
 /* Time */
 
-#team-area{
+#team-area {
   margin-bottom: 65px;
 }
 
 /* Trabalhe conosco */
 
-#applay-area{
+#apply-area {
   height: 500px;
 }
 
-#appl-area .row, .col-md-6, #apply-content{
+#apply-area .row, #apply-img, #apply-content {
   height: 100%;
 }
 
-#apply-content{
+#apply-img {
+  background-image: url('img/empresa.jpg');
+  background-size: cover;
+}
+
+#apply-content {
   padding: 0 5% 0 5%;
 }
 
-#apply-content h4, #apply-content p{
+#apply-content h4, #apply-content p {
   color: white;
-  margin-right: 15px;
 }
 
-#apply-content h4{
+#apply-content h4 {
   margin-top: 15%;
-}
-
-#botao{
-  border-color: white;
-  border-radius: 15px;
-  background-color: #159a9c00;
-}
-
-#botao:hover{
-  background-color: #159A9C;
 }
 
 /* Projetos */
 
-#project-area {
-  text-align: center; /* Centraliza os botões horizontalmente */
+#projetos {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 120px 120px;
+  justify-content: stretch;
+  position: relative;
+  left: 155px;
 }
 
-/* Estilo para os botões de filtragem */
-#project-area button.botao {
-  margin: 5px; /* Espaçamento entre os botões */
-  padding: 8px 16px; /* Espaçamento interno dos botões */
+#filter-btn{
+  padding: 0 25% 0 25%;
+  position: relative;
+  left: 185px;
+  bottom: 15px;
 }
 
-/* Estilo para a div que contém as imagens */
-#project-area div.row {
-  display: grid; /* Utiliza o flexbox para alinhar as imagens lado a lado */
-  justify-content: center; /* Centraliza as imagens horizontalmente */
-  flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha se não couberem na mesma linha */
+/* Novidades */
+
+#meet-area{
+  background-color: #f2f2f2;
 }
 
-/* Estilo para as imagens dos projetos */
-#project-area div.col-md-4 {
-  width: 33.33%; /* Define o tamanho para ocupar 1/3 da largura da div que contém as imagens */
-  padding: 5px; /* Espaçamento entre as imagens */
+#text p{
+  position: relative;
+  top: 40px;
 }
 
-/* Estilo para as imagens dos projetos dentro da div */
-#project-area div.col-md-4 img {
-  width: 100%; /* Faz com que as imagens ocupem 100% da largura da coluna */
-  height: auto; /* Mantém a proporção original da imagem */
+#text h2{
+  position: relative;
+  bottom: 30px;
+}
+
+#busca{
+  display: flexbox;
+  position: relative;
+  top: 50px;
+  left: 500px;
+  width: 500px;
+}
+
+#valor{
+  background-color: #002333;
+  color: #FFFFFF;
+  height: 5em;
+  padding: 3% 0 5% 0;
+  position: relative;
+  top: 100px;
+}
+
+/* Contato */
+
+#contato1{
+  position: relative;
+  left: 95px;
+  top: 61px;
+  padding-left: 3%;
+}
+
+#contato2{
+  position: relative;
+  left: 565px;
+  padding-inline-end: 5%;
+}
+
+#contato3{
+  position: relative;
+  left: 990px;
+  bottom: 60px;
+  padding-right: 1%;
+}
+
+#contato1 i{
+  position: relative;
+  left: 160px;
+}
+
+#contato2 i{
+  position: relative;
+  left: 160px;
+}
+
+#contato3 i{
+  position: relative;
+  left: 160px;
+}
+
+/* Form */
+
+#form-area p{
+  position: relative;
+  left: 500px;
+}
+
+#form{
+  position: relative;
+  left: 500px;
+  width: 500px;
+}
+
+/* Footer */
+
+#footer-area{
+  background-color: #dee4ec;
+  color: #000000;
 }
 
