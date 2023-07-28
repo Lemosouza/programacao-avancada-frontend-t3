@@ -64,15 +64,14 @@ header img {
 .main-title::after{
   background-color: #002333;
   content: "";
-  display: grid;
+  margin: 0 auto;
+  display: block;
   height: 2px;
-  position: relative;
-  vertical-align: bottom;
-  width: 17%;
+  width: 9%;
 }
 
 .main-title:after {
-  left: 630px;
+  left: 17em;
   bottom: -0.5em;
   margin-bottom: auto;
 }
@@ -168,20 +167,13 @@ header img {
 
 /* Projetos */
 
-#projetos {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: 120px 120px;
-  justify-content: stretch;
-  position: relative;
-  left: 155px;
+.project-box{
+  margin-bottom: 30px;
 }
 
-#filter-btn{
-  padding: 0 25% 0 25%;
-  position: relative;
-  left: 185px;
-  bottom: 15px;
+#filter-btn-box{
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 /* Novidades */

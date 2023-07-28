@@ -1,124 +1,41 @@
+// Função para criar ProgressBar
+function createProgressBar(element, startColor, endColor, endWidth, value) {
+  return new ProgressBar.Circle(element, {
+    color: startColor,
+    strokeWidth: 9,
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    text: {
+      autoStyleContainer: true
+    },
+    from: { color: startColor, width: 1 },
+    to: { color: endColor, width: endWidth },
+    // Set default step function for all animate calls
+    step: function(state, circle) {
+      circle.path.setAttribute('stroke', state.color);
+      circle.path.setAttribute('stroke-width', state.width);
 
-let containerA = new ProgressBar.Circle(circleA, {
-  color: '#aaa',
-  // This has to be the same size as the maximum width to
-  // prevent clipping
-  strokeWidth: 4,
-  trailWidth: 1,
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: true
-  },
-  from: { color: '#aaa', width: 1 },
-  to: { color: '#333', width: 4 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
-
-    let value = Math.round(circle.value() * 100);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value);
+      let roundedValue = Math.round(circle.value() * value);
+      circle.setText(roundedValue === 0 ? '' : roundedValue);
     }
+  });
+}
 
-  }
-});
-containerA.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-containerA.text.style.fontSize = '2rem';
+const containerA = createProgressBar(circleA, '#b0c4de', '#4682b4', 4, 100);
+const containerB = createProgressBar(circleB, '#b0c4de', '#4682b4', 4, 18547);
+const containerC = createProgressBar(circleC, '#b0c4de', '#4682b4', 4, 18547);
+const containerD = createProgressBar(circleD, '#b0c4de', '#4682b4', 4, 18547);
 
-let containerB = new ProgressBar.Circle(circleB, {
-  color: '#aaa',
-  strokeWidth: 9,
-  trailWidth: 1,
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: true
-  },
-  from: { color: '#aaa', width: 1 },
-  to: { color: '#333', width: 4 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
-
-    let value = Math.round(circle.value() * 18547);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value);
-    }
-
-  }
-});
-
-let containerC = new ProgressBar.Circle(circleC, {
-  color: '#aaa',
-  strokeWidth: 9,
-  trailWidth: 1,
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: true
-  },
-  from: { color: '#aaa', width: 1 },
-  to: { color: '#333', width: 4 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
-
-    let value = Math.round(circle.value() * 18547);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value);
-    }
-
-  }
-});
-
-let containerD = new ProgressBar.Circle(circleD, {
-  color: '#fff',
-  strokeWidth: 9,
-  trailWidth: 1,
-  easing: 'easeInOut',
-  duration: 1400,
-  text: {
-    autoStyleContainer: true
-  },
-  from: { color: '#aaa', width: 1 },
-  to: { color: '#fff', width: 4 },
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-    circle.path.setAttribute('stroke-width', state.width);
-
-    let value = Math.round(circle.value() * 18547);
-    if (value === 0) {
-      circle.setText('');
-    } else {
-      circle.setText(value);
-    }
-
-  }
-});
-
-
+// Anima os ProgressBar
 containerA.animate(1.0);
 containerB.animate(1.0);
 containerC.animate(1.0);
 containerD.animate(1.0);
 
-
 // Parallax
 $('#data-area').parallax({imageSrc: 'img/cidadeparallax.png'})
 $('#apply-content').parallax({imageSrc: 'img/pattern.png'})
-
-// Scroll para as seções da página a partir do menu
 
 let navBtn = $('.nav-item');
 
@@ -126,7 +43,7 @@ let bannerSection = $('#carousel-area');
 let aboutSection = $('#about-area');
 let servicesSection = $('#services-area');
 let teamSection = $('#team-area');
-let portfolioSection = $('#portfolio-area');
+let portfolioSection = $('#project-area');
 let contactSection = $('#contact-area');
 
 let scrollTo = '';
@@ -141,7 +58,7 @@ $(navBtn).click(function() {
     scrollTo = servicesSection;
   } else if(btnId == 'team-menu') {
     scrollTo = teamSection;
-  } else if(btnId == 'portfolio-menu') {
+  } else if(btnId == 'project-menu') {
     scrollTo = portfolioSection;
   } else if(btnId == 'contact-menu') {
     scrollTo = contactSection;
@@ -154,20 +71,39 @@ $(navBtn).click(function() {
   }, 1500);});
 
 // Filtro para a seção de portfólio
+const portfolioFilterButtons = document.querySelectorAll('#filter-btn-box .btn');
+const portfolioCards = document.querySelectorAll('.project-box');
 
-// pegue os estados dos botões (qual está selecionado)
-// pegue os cards
+portfolioFilterButtons.forEach((button) => {
+  button.addEventListener('click', function () {
+    // Remova a classe 'active' de todos os botões de filtro
+    portfolioFilterButtons.forEach((btn) => {
+      btn.classList.remove('active');
+    });
 
-// adicione um evento aos botões
+    // Adicione a classe 'active' ao botão clicado
+    this.classList.add('active');
 
-// funçao de filtro  
-  // se o filtro não está marcado para "todos"    
-    // para cada card      
-      // se o card não corresponde ao filtro        
-        // esconder o card       
-      // senão, ou seja, se o card corresponde ao filtro         
-        // mostrar o card   
-  // senão, ou seja, se o filtro está em todos    
-    // para cada card      
-      // mostre os elementos cards
+    // Obtenha o filtro selecionado
+    const selectedFilter = this.getAttribute('data-filter');
+
+    // Chame a função de filtro
+    filterPortfolio(selectedFilter);
+  });
+});
+
+// Função de filtro
+function filterPortfolio(selectedFilter) {
+  portfolioCards.forEach((card) => {
+    const cardFilter = card.getAttribute('data-filter');
+
+    // Verifica se o filtro selecionado é "all" ou se corresponde ao filtro do card
+    const displayCard = selectedFilter === 'all' || selectedFilter === cardFilter;
+
+    // Define o estilo de exibição do card de acordo com a variável displayCard
+    card.style.display = displayCard ? 'block' : 'none';
+  });
+}
+
+
 
